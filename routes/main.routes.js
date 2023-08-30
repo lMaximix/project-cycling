@@ -1,20 +1,39 @@
 const router = require('express').Router();
-const MainPage = require('../../components/pages/MainPage');
+const MainPage = require('../components/pages/MainPage');
 
-const { Project, User } = require('../../db/models');
+const { Route, User } = require('../db/models');
+
+const routes = [
+  {
+    name: 'testName',
+    length: 1,
+    location: 'spb',
+    description: 'super',
+    // User: {
+    //   id: 1,
+    //   name; 'IGOR'
+    // }
+  },
+  {
+    name: 'testName2',
+    length: 1,
+    location: 'spb',
+    description: 'superpuper',
+  },
+];
 
 router.get('/', async (req, res) => {
-  const projects = await Project.findAll({
-    include: User,
-    raw: true,
-    nest: true,
-  });
+  // const routes = await Route.findAll({
+  //   include: User,
+  //   raw: true,
+  //   nest: true,
+  // });
 
-  res.send(res.renderComponent(MainPage, { projects }));
+  res.send(res.renderComponent(MainPage, { routes }));
 });
 
-router.get('/profile', (req, res) => {
-  res.send(res.renderComponent(ProfilePage));
-});
+// router.get('/profile', (req, res) => {
+//   res.send(res.renderComponent(ProfilePage));
+// });
 
 module.exports = router;

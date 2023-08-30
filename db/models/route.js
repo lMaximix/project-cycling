@@ -1,42 +1,42 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('./sequelize'); // Подключение к базе данных Sequelize
+const sequelize = require('sequelize'); // Подключение к базе данных Sequelize
 
 const Route = sequelize.define('Route', {
   name: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   length: {
     type: DataTypes.FLOAT,
-    allowNull: false
+    allowNull: false,
   },
   location: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   description: {
     type: DataTypes.TEXT,
-    allowNull: true
-  }
+    allowNull: true,
+  },
   // Другие поля по необходимости
 });
 
 // Определение ассоциаций
 Route.belongsTo(User, {
   foreignKey: 'author_id',
-  as: 'author'
+  as: 'author',
 });
 Route.hasMany(RoutePoint, {
   foreignKey: 'route_id',
-  as: 'routePoints'
+  as: 'routePoints',
 });
 Route.hasMany(Review, {
   foreignKey: 'route_id',
-  as: 'reviews'
+  as: 'reviews',
 });
 Route.hasMany(RouteRating, {
   foreignKey: 'route_id',
-  as: 'routeRatings'
+  as: 'routeRatings',
 });
 
 module.exports = Route;
