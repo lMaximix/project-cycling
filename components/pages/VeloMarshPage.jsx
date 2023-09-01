@@ -6,7 +6,7 @@ function VeloMarshPage({ route }) {
     <Layout>
       <div>
         <h3>{route.name}</h3>
-        <p>Длинна маршрута:{route.length}</p>
+        <p>Длина маршрута:{route.length}</p>
         <p>{route.description}</p>
         <p> {route.location}</p>
         <img src="" alt="картинка маршрута" />

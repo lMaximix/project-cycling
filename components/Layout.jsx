@@ -8,15 +8,19 @@ function Layout({ children, user }) {
         {/* чтобы выводить нормально русский текст */}
         <meta charSet="UTF-8" />
         <title>/</title>
-        <link rel="stylesheet" />
+        <link rel="stylesheet" href="/css/style.css"/>
         {/* <script defer src="/js/create.js" />
         <script defer src="/js/delete.js" />
         <script defer src="/js/update.js" />
         <script defer src="/js/auth.js" /> */}
+                <script src="https://api-maps.yandex.ru/v3/?apikey=b963d0ca-e363-4973-9774-670a40c79830
+&lang=ru_RU"></script>
+      <script defer src="/js/yandexMaps.js" />
       </head>
       <body>
         <Header user={user} />
-        <div className="container">{children}</div>
+        <div id="map" class="map"></div>
+        
       </body>
     </html>
   );

@@ -17,6 +17,8 @@ configServer(app);
 
 app.locals.title = 'AI Startups';
 
+app.use(express.static('public'));
+
 app.use('/', mainRouter);
 app.use('/', cookieRouter);
 app.use('/auth', authRouter);
