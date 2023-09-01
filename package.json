@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js --ext js,jsx,json",
+    "dev": "nodemon app.js --ext js,jsx,json --ignore sessions",
     "test": "jest",
     "dbr": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   },
@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@2gis/mapgl": "^1.39.0",
+    "@2gis/mapgl-directions": "^2.0.2",
     "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-react": "^7.22.5",

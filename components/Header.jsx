@@ -18,7 +18,11 @@ function Header({ user }) {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNav"
+          style={{ backgroundColor: '#20B2AA' }}
+        >
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a className="nav-link disabled mr-4">Привет, {user.login}!</a>

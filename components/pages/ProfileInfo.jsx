@@ -8,15 +8,15 @@ function ProfileInfo({ user }) {
   return (
     <>
       <p className="card-text">
-        Фото профиля:
         <img
           src={pictureAdress}
           className="card-img-top"
           alt={`Аватарка пользователя ${user.login}`}
+          style={{ width: '50%' }}
         />
       </p>
       <p className="card-text">
-        <b>логин: </b>
+        <b>Логин: </b>
         {user.login}
       </p>
       {/*       <button type="button" className="btn btn-primary">
