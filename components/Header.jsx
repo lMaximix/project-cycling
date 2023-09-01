@@ -5,21 +5,77 @@ function Header({ user }) {
 
   if (user) {
     contentNavBar = (
-      <>
-        <div>{`Привет, ${user.login}!`}</div>
-        <a href="/profile" className="btn btn-info">
-          Профиль
-        </a>
-        <a href="/auth/logout">Выйти</a>
-      </>
+      <nav className="navbar navbar-expand-lg navbar-light bg-white">
+        <a className="navbar-brand"></a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="nav-link disabled mr-4">Привет, {user.login}!</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link mr-4" href="/profile">
+                Личный кабинет
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link mr-4" href="/auth/logout">
+                Выйти
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                Главная
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     );
   } else {
     contentNavBar = (
-      <>
-        <div>Добро пожаловать!</div>
-        <a href="/auth/registration">Регистрация</a>
-        <a href="/auth/login">Авторизация</a>
-      </>
+      <nav className="navbar navbar-expand-lg navbar-light bg-white">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="nav-link mr-4" href="/auth/login">
+                Войти
+              </a>
+            </li>
+            <li className="nav-item mr-4">
+              <a className="nav-link mr-4" href="/auth/registration">
+                Зарегистрироваться
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                Главная
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     );
   }
 
@@ -27,7 +83,6 @@ function Header({ user }) {
     <header>
       <nav>
         <div className="container">
-          <a href="/">Веломаршруты</a>
           <div>{contentNavBar}</div>
         </div>
       </nav>

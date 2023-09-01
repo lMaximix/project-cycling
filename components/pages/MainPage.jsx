@@ -1,6 +1,7 @@
 const React = require('react');
 const Layout = require('../Layout');
 const VeloMarshCard = require('../VeloMarshCard');
+const { head } = require('../../routes/views/main.routes');
 
 function MainPage({ routes, user }) {
   return (
@@ -10,6 +11,7 @@ function MainPage({ routes, user }) {
           <VeloMarshCard key={projectObj.id} route={projectObj} user={user} />
         ))}
       </div>
+      
     </Layout>
   );
 }
