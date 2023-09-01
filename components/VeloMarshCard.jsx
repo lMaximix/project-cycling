@@ -29,6 +29,7 @@ function VeloMarshCard({ route, user }) {
 
               Удалить
             </button>
+            
           </>
         )}
       </div>
