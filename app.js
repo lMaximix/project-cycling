@@ -24,6 +24,6 @@ app.use('/', cookieRouter);
 app.use('/auth', authRouter);
 app.use('/auth', authApiRouter);
 app.use('/routes', routesRouter);
-app.use('/routes', routesApiRouter);
+app.use('/api/routes', routesApiRouter);
 
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));

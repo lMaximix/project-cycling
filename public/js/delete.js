@@ -1,8 +1,9 @@
-const projectsContainer = document.querySelector('#projects-container');
+const projectsContainer = document.querySelector('#my-routes-container');
 
 // мы делегируем событие родительскому контейнеру
 projectsContainer.addEventListener('click', async (event) => {
   // проверяет, это кнопка удалить?
+
   if (event.target.classList.contains('remove-project')) {
     const button = event.target;
 
@@ -10,7 +11,7 @@ projectsContainer.addEventListener('click', async (event) => {
 
     const { id } = projectCard.dataset;
 
-    await fetch(`/projects/${id}`, {
+    await fetch(`/api/routes/${id}`, {
       method: 'DELETE',
     });
 

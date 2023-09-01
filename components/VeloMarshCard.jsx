@@ -13,9 +13,9 @@ function VeloMarshCard({ route, user }) {
           <a href={`/routes/${route.id}`}>{route.name}</a>
         </h5>
         <i>Добавлено автором: {route.User.login}</i>
-        {user && user.id === route.userId && (
+        {user && user.id === route.author_id && (
           <>
-            <a href={`/routes/update-form/${route.id}`}>
+            {/* <a href={`/routes/update-form/${route.id}`}>
               <button
                 type="button"
                 className="btn btn-info"
@@ -23,7 +23,7 @@ function VeloMarshCard({ route, user }) {
               >
                 Изменить
               </button>
-            </a>
+            </a> */}
             <button type="button" className="btn btn-danger remove-project">
               Удалить
             </button>

@@ -33,8 +33,14 @@ router.get('/', async (req, res) => {
   res.send(res.renderComponent(MainPage, { routes }));
 });
 
-router.get('/profile', (req, res) => {
-  res.send(res.renderComponent(ProfilePage));
+router.get('/profile', async (req, res) => {
+  const routes = await Route.findAll({
+    where: { author_id: req.session.userId },
+    include: User,
+    raw: true,
+    nest: true,
+  });
+  res.send(res.renderComponent(ProfilePage, { routes }));
 });
 
 module.exports = router;
