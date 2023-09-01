@@ -14,7 +14,12 @@ function ProfilePage({ routes, user }) {
       <NewVeloMarshForm />
       <div id="my-routes-container" className="row">
         {routes.map((projectObj) => (
-          <VeloMarshCard key={projectObj.id} route={projectObj} user={user} />
+          <VeloMarshCard
+            key={projectObj.id}
+            route={projectObj}
+            user={user}
+            page="profile"
+          />
         ))}
       </div>
     </Layout>

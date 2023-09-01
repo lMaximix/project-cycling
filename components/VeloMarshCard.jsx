@@ -1,6 +1,6 @@
 const React = require('react');
 
-function VeloMarshCard({ route, user }) {
+function VeloMarshCard({ route, user, page = 'main' }) {
   return (
     <div
       className="card project-card col-sm-6"
@@ -13,7 +13,7 @@ function VeloMarshCard({ route, user }) {
           <a href={`/routes/${route.id}`}>{route.name}</a>
         </h5>
         <i>Добавлено автором: {route.User.login}</i>
-        {user && user.id === route.author_id && (
+        {user && page === 'profile' && user.id === route.author_id && (
           <>
             {/* <a href={`/routes/update-form/${route.id}`}>
               <button
