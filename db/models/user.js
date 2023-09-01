@@ -5,15 +5,15 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Route, Review, RouteRating }) {
       this.hasMany(Route, {
         foreignKey: 'author_id',
-        as: 'routes'
+        // as: 'routes'
       });
       this.hasMany(Review, {
         foreignKey: 'user_id',
-        as: 'reviews'
+        // as: 'reviews'
       });
       this.hasMany(RouteRating, {
         foreignKey: 'user_id',
-        as: 'routeRatings'
+        // as: 'routeRatings'
       });
     }
   }
@@ -22,21 +22,21 @@ module.exports = (sequelize, DataTypes) => {
       login: {
         type: DataTypes.TEXT,
         allowNull: false,
-        unique: true
+        unique: true,
       },
       password: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
       },
       mail: {
         type: DataTypes.TEXT,
         allowNull: false,
-        unique: true
-      }
+        unique: true,
+      },
     },
     {
       sequelize,
-      modelName: 'User'
+      modelName: 'User',
     }
   );
   return User;

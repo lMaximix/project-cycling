@@ -5,19 +5,19 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ User, RoutePoint, Review, RouteRating }) {
       this.belongsTo(User, {
         foreignKey: 'author_id',
-        as: 'author',
+        // as: 'author',
       });
       this.hasMany(RoutePoint, {
         foreignKey: 'route_id',
-        as: 'routePoints',
+        // as: 'routePoints',
       });
       this.hasMany(Review, {
         foreignKey: 'route_id',
-        as: 'reviews',
+        // as: 'reviews',
       });
       this.hasMany(RouteRating, {
         foreignKey: 'route_id',
-        as: 'routeRatings',
+        // as: 'routeRatings',
       });
     }
   }
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       length: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       location: {

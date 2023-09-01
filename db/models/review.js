@@ -5,11 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ User, Route }) {
       this.belongsTo(User, {
         foreignKey: 'user_id',
-        as: 'user',
+        // as: 'user',
       });
       this.belongsTo(Route, {
         foreignKey: 'route_id',
-        as: 'route',
+        // as: 'route',
       });
     }
   }

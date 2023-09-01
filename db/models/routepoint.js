@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Route }) {
       this.belongsTo(Route, {
         foreignKey: 'route_id',
-        as: 'route',
+        // as: 'route',
       });
     }
   }

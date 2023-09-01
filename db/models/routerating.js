@@ -5,11 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ User, Route }) {
       this.belongsTo(User, {
         foreignKey: 'user_id',
-        as: 'user'
+        // as: 'user'
       });
       this.belongsTo(Route, {
         foreignKey: 'route_id',
-        as: 'route'
+        // as: 'route'
       });
     }
   }
@@ -17,13 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     {
       rating: {
         type: DataTypes.INTEGER,
-        allowNull: false
-      }
+        allowNull: false,
+      },
       // Другие поля по необходимости
     },
     {
       sequelize,
-      modelName: 'RouteRating'
+      modelName: 'RouteRating',
     }
   );
   return RouteRating;

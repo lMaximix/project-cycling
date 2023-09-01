@@ -1,17 +1,14 @@
 const React = require('react');
 const Layout = require('../Layout');
+const VeloMarshCard = require('../VeloMarshCard');
 
-function MainPage({ routes }) {
+function MainPage({ routes, user }) {
   return (
-    <Layout user={user} title={title}>
+    <Layout user={user} /* title={}*/>
       <div id="routes-container" className="row">
-        {/* {projects.map((projectObj) => (
-          <ProjectCard
-            key={projectObj.id}
-            project={projectObj}
-            user={user}
-          />
-        ))} */}
+        {routes.map((projectObj) => (
+          <VeloMarshCard key={projectObj.id} route={projectObj} user={user} />
+        ))}
       </div>
     </Layout>
   );

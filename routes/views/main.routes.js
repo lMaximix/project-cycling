@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const MainPage = require('../components/pages/MainPage');
+const MainPage = require('../../components/pages/MainPage');
+const ProfilePage = require('../../components/pages/ProfilePage');
 
-const { Route, User } = require('../db/models');
+const { Route, User } = require('../../db/models');
 
 const routes = [
   {
@@ -23,17 +24,17 @@ const routes = [
 ];
 
 router.get('/', async (req, res) => {
-  // const routes = await Route.findAll({
-  //   include: User,
-  //   raw: true,
-  //   nest: true,
-  // });
-
+  const routes = await Route.findAll({
+    include: User,
+    raw: true,
+    nest: true,
+  });
+  console.log(routes);
   res.send(res.renderComponent(MainPage, { routes }));
 });
 
-// router.get('/profile', (req, res) => {
-//   res.send(res.renderComponent(ProfilePage));
-// });
+router.get('/profile', (req, res) => {
+  res.send(res.renderComponent(ProfilePage));
+});
 
 module.exports = router;
