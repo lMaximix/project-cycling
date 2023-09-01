@@ -27,6 +27,7 @@ function VeloMarshCard({ route, user }) {
             <button type="button" className="btn btn-danger remove-project">
               Удалить
             </button>
+            
           </>
         )}
       </div>
