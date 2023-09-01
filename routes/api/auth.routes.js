@@ -5,7 +5,6 @@ const { User } = require('../../db/models');
 
 router.post('/registration', async (req, res) => {
   const { login, password, mail } = req.body;
-  console.log(login, password, mail);
 
   if (login === '' || password === '' || mail === '') {
     res.status(404).json({ success: false, message: 'Заполните все поля' });

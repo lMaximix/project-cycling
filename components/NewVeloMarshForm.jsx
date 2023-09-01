@@ -39,7 +39,6 @@ function NewVeloMarshForm() {
         <button type="submit" className="btn btn-primary">
           Отправить
         </button>
-        <script defer src="/js/create.js" />
       </form>
     </div>
   );

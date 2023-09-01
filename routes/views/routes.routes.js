@@ -19,7 +19,7 @@ const VeloMarshPage = require('../../components/pages/VeloMarshPage');
 // роут на отрисовку страницы с отдельным проектом
 router.get('/:routeId', async (req, res) => {
   const { routeId } = req.params;
-  console.log(routeId);
+
   const route = await Route.findOne({ where: { id: routeId } });
 
   const html = res.renderComponent(VeloMarshPage, { route });

@@ -1,15 +1,13 @@
 // получаем форму добавления по id
 const form = document.getElementById('new-project-form');
 
-// контейнер, в который будем добавлять новые проекты
-const container = document.getElementById('routes-container');
+const container = document.getElementById('my-routes-container');
 
 // отслеживаем отправку формы
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const { name, description, length, location } = form;
-
   const data = {
     name: name.value,
     description: description.value,
@@ -18,10 +16,8 @@ form.addEventListener('submit', async (event) => {
     // img: img.value,
   };
 
-  console.log(data);
-
   try {
-    const response = await fetch('/routes', {
+    const response = await fetch('/api/routes', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -34,10 +30,8 @@ form.addEventListener('submit', async (event) => {
     if (response.ok) {
       // показываем что ответ пришёл в JSON
       const result = await response.json();
-
       // берём отрендеренный HTML
       const html = result.html;
-
       // добавить html в контейнер
       container.insertAdjacentHTML(
         // куда добавить
@@ -45,6 +39,7 @@ form.addEventListener('submit', async (event) => {
         // что добавить
         html
       );
+
       // очищаю инпуты в форме
       form.reset();
     } else {
