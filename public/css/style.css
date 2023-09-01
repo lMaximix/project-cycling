@@ -1,9 +1,18 @@
-.map {
-  width: 500px;
-  height: 500px;
-  background-color: #333;
+html,
+body,
+#container {
+    margin: 0;
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
 }
-
-[class*="ymaps3x0--map-copyrights__container"] {
-    display: none;
+#reset {
+    padding: 4px 10px;
+    background: #00a81f;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgba(38, 38, 38, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
 }

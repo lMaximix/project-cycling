@@ -13,13 +13,13 @@ function Layout({ children, user }) {
         <script defer src="/js/delete.js" />
         <script defer src="/js/update.js" />
         <script defer src="/js/auth.js" /> */}
-                <script src="https://api-maps.yandex.ru/v3/?apikey=b963d0ca-e363-4973-9774-670a40c79830
-&lang=ru_RU"></script>
-      <script defer src="/js/yandexMaps.js" />
+                <script src="https://mapgl.2gis.com/api/js/v1"></script>
+                <script src="https://unpkg.com/@2gis/mapgl-directions@^2/dist/directions.js"></script>
+      <script defer src="/js/2gisMaps.js" />
       </head>
       <body>
         <Header user={user} />
-        <div id="map" class="map"></div>
+        <div id="container"></div>
         
       </body>
     </html>
